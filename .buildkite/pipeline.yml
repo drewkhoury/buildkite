@@ -3,3 +3,10 @@ steps:
     command: echo "Hello!"
   - label: "Example Test 2 :rocket:"
     command: echo "Hello! drew is the best"
+
+  - label: "docker :rocket:"
+    command: yarn install && yarn run test
+    plugins:
+      - docker#v1.1.1:
+          image: "node:8"
+          workdir: /app
