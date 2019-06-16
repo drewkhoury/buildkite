@@ -1,0 +1,33 @@
+steps:
+  - label: Example Test
+    command: echo "Hello!"
+  - label: "Example Test 2 :rocket:"
+    command: echo "Hello! drew is the best"
+
+  - label: "docker :rocket:"
+    command: yarn install && yarn run test
+    plugins:
+      - docker#v1.1.1:
+          image: "node:8"
+          workdir: /app
+
+
+#
+# circleci/python:2.7.14
+#
+# echo 'export TAG=0.1.${CIRCLE_BUILD_NUM}' >> $BASH_ENV
+# echo 'export IMAGE_NAME=python-circleci-docker' >> $BASH_ENV
+# virtualenv helloworld
+# . helloworld/bin/activate
+# pip install --no-cache-dir -r requirements.txt
+#
+# . helloworld/bin/activate
+# python test_hello_world.py
+#
+# . helloworld/bin/activate
+# pyinstaller -F hello_world.py
+# docker build -t ariv3ra/$IMAGE_NAME:$TAG .
+# echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
+# docker push ariv3ra/$IMAGE_NAME:$TAG
+#
+# ssh -o StrictHostKeyChecking=no root@hello.dpunks.org "/bin/bash ./deploy_app.sh ariv3ra/$IMAGE_NAME:$TAG"
