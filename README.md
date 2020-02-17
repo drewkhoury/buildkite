@@ -2,10 +2,9 @@
 
 
 ```
-
-docker run -e BUILDKITE_AGENT_TOKEN="INSERT-YOUR-AGENT-TOKEN-HERE" buildkite/agent
-
-
+export HISTCONTROL=ignorespace
+ BUILDKITE_AGENT_TOKEN=xxx
+docker run -e BUILDKITE_AGENT_TOKEN="$BUILDKITE_AGENT_TOKEN" buildkite/agent
 ```
 
 You'll need to:
