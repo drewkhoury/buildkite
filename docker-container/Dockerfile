@@ -1,4 +1,4 @@
-FROM docker
+FROM docker:27.1.1-dind-alpine3.20
 LABEL maintainer "@drewkhoury"
 RUN apk --no-cache update && apk --no-cache upgrade \
     && apk --no-cache add --upgrade make zip git curl py-pip openssl bash gettext \
